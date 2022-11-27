@@ -1,0 +1,25 @@
+import random
+finalfinal = 0
+finalresult = 0
+numberOfRolls = int(input("Enter number of rolls: "))
+diceType = int(input("Enter dice type: "))
+explodingCondition = str(input("Is it exploding "))
+print("Rolling", numberOfRolls,"D",diceType)
+print("Results:")
+for j in range (1000):
+    finalresult = 0
+    if explodingCondition == "True" or explodingCondition == "Yes":
+        explodingCondition = True
+    elif explodingCondition == "False" or explodingCondition == "No":
+        explodingCondition = False
+    for i in range (numberOfRolls):
+        result = random.randrange(1, diceType+1)
+        print(result)
+        finalresult = finalresult + result
+        while result == diceType and explodingCondition:
+            result = random.randrange(1, diceType+1)
+            print(result)
+            finalresult = finalresult + result
+        print(finalresult)
+    finalfinal = finalresult + finalfinal
+print(float(finalfinal)/float(1000))
