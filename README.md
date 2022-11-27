@@ -1,0 +1,1 @@
+# A dice for Dungeons & Dragons
